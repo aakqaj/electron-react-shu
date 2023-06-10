@@ -1,8 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { detectEnvironment, isMobileScreen } from 'renderer/utils';
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
+import { detectEnvironment } from 'renderer/utils';
 
 export enum Theme {
   Dark = 'dark',

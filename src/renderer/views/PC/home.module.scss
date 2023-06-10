@@ -6,5 +6,7 @@
   background-color: var(--c-background-primary);
   .right{
     flex: 1;
+    min-width: 720px;
+    padding: 48px;
   }
 }

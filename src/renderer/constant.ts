@@ -1,6 +1,7 @@
 export enum Path {
   Home = '/home',
-  Settings = 'settings',
+  Bookshelf="bookshelf",
+  SourceManger="sourcemanger",
 }
 
 export const BASE_INFO = {
@@ -16,7 +17,7 @@ export const SideBarConfig = [
   },
   {
     title: '书源管理',
-    path: '/home/settings',
+    path: '/home/sourcemanger',
   },
   {
     title: '书架管理',

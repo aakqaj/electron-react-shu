@@ -10,8 +10,9 @@ import SearchIcon from '@material-ui/icons/Search';
 import styles from './home.module.scss';
 import SideBar from '../../components/SideBar/SideBar';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Path } from 'renderer/constant';
-import Settings from './Settings';
+import { Path, SideBarConfig } from 'renderer/constant';
+import SourceManger from './SourceManger';
+import Bookshelf from './Bookshelf';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -106,17 +107,16 @@ export function SearchAppBar() {
 export default function Home() {
   return (
     <div className={styles.home}>
-      {/* <SearchAppBar /> */}
-
       <div className="left">
         <SideBar />
       </div>
       <div className={styles.right}>
         <Routes>
-          <Route path={Path.Settings} element={<Settings />} />
+          <Route path={Path.Bookshelf} element={<Bookshelf />} />
+          <Route path={Path.SourceManger} element={<SourceManger />} />
           <Route
             path={'/'}
-            element={<Navigate to={'/home/settings'} replace />}
+            element={<Navigate to={SideBarConfig[0].path} replace />}
           />
         </Routes>
       </div>

@@ -154,39 +154,39 @@ label {
   cursor: pointer;
 }
 
-// input {
-//   text-align: center;
-//   font-family: inherit;
-// }
+input {
+  text-align: center;
+  font-family: inherit;
+}
 
-// input[type="checkbox"] {
-//   cursor: pointer;
-//   background-color: var(--white);
-//   color: var(--black);
-//   appearance: none;
-//   border: var(--border-in-light);
-//   border-radius: 5px;
-//   height: 16px;
-//   width: 16px;
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-// }
+input[type="checkbox"] {
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--black);
+  appearance: none;
+  border: var(--border-in-light);
+  border-radius: 5px;
+  height: 16px;
+  width: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-// input[type="checkbox"]:checked::after {
-//   display: inline-block;
-//   width: 8px;
-//   height: 8px;
-//   background-color: var(--primary);
-//   content: " ";
-//   border-radius: 2px;
-// }
+input[type="checkbox"]:checked::after {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  content: " ";
+  border-radius: 2px;
+}
 
-// input[type="range"] {
-//   appearance: none;
-//   background-color: var(--white);
-//   color: var(--black);
-// }
+input[type="range"] {
+  appearance: none;
+  background-color: var(--white);
+  color: var(--black);
+}
 
 @mixin thumb() {
   appearance: none;
