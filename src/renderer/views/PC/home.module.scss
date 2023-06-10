@@ -1,5 +1,9 @@
 .home {
- 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: var(--black);
+  background-color: var(--c-background-primary);
   .right{
     flex: 1;
   }

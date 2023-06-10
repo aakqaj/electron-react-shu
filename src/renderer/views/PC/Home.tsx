@@ -8,11 +8,10 @@ import { alpha, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import styles from './home.module.scss';
-import SideBar from './SideBar';
+import SideBar from '../../components/SideBar/SideBar';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Path } from 'renderer/constant';
 import Settings from './Settings';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -107,18 +106,19 @@ export function SearchAppBar() {
 export default function Home() {
   return (
     <div className={styles.home}>
-      <SearchAppBar />
-      <div className="content">
-        <div className="left"></div>
-        <div className="right">
-          <Routes>
-            <Route path={Path.Settings} element={<Settings />} />
-            <Route
-              path={"/"}
-              element={<Navigate to={"/home/settings"} replace />}
-            />
-          </Routes>
-        </div>
+      {/* <SearchAppBar /> */}
+
+      <div className="left">
+        <SideBar />
+      </div>
+      <div className={styles.right}>
+        <Routes>
+          <Route path={Path.Settings} element={<Settings />} />
+          <Route
+            path={'/'}
+            element={<Navigate to={'/home/settings'} replace />}
+          />
+        </Routes>
       </div>
     </div>
   );

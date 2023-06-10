@@ -3,6 +3,8 @@ import App from './App';
 import "./styles/globals.scss";
 import "./styles/markdown.scss";
 import "./styles/highlight.scss";
+import "./styles/reset.scss";
+
 
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
