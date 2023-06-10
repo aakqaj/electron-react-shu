@@ -13,18 +13,20 @@ export default function SideBar() {
   const [beforeKey, setBeforeKey] = useState(0);
   const lineRef = useRef<HTMLDivElement>(null);
 
-
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.to(lineRef.current, { height: '100%', duration: 0 });
-    }, lineRef);
-    return () => ctx.revert();
+    setTimeout(() => {
+      const ctx = gsap.context(() => {
+        gsap.to(lineRef.current, { height: '100%', duration: 0 });
+      }, lineRef);
+    }, 10);
+    // return () => ctx.revert();
   }, []);
 
   const isActive = (path: string) => path === location.pathname;
   const barAnime = (key: number) => {
     setTimeout(() => {
-      const isUp = key > beforeKey;
+      const isUp = key >= beforeKey;
+
       const config = isUp ? { top: 0 } : { bottom: 0 };
       setBeforeKey(key);
       gsap.context(() => {
@@ -34,7 +36,7 @@ export default function SideBar() {
           { height: '100%', duration, ...config }
         );
       }, lineRef);
-    }, 0);
+    }, 10);
   };
 
   return (

@@ -1,0 +1,390 @@
+[
+  {
+    "Weight": 1,
+    "SourceName": "笔尖中文",
+    "BaseUrl": "https://www.biquzw.la/",
+    "Search": {
+      "SearchUrl": "https://www.biquzw.la/modules/article/search.php",
+      "Method": "GET",
+      "Payload": { "searchkey": "$" },
+      "ResultBookListRule": "tbody tr@html",
+      "DetailUrlRule": "a.0@href",
+      "BookNameRule": "a.0@text",
+      "AuthorRule": ".odd.1@text",
+      "TypeRule": ".odd.1@text",
+      "WordsCountRule": ".even.0@text",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "",
+      "NewChapterDateRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": "#maininfo #info h1@text",
+      "AuthorRule": "#maininfo #info p.0@text",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "NewChapterDateRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "#fmimg img@src",
+      "Content": {
+        "DetailUrlRule": "",
+        "CatalogueListRule": "#list dd@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#content@html",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 2,
+    "SourceName": "全本小说网",
+    "BaseUrl": "https://quanben5.com/",
+    "Search": {
+      "SearchUrl": "https://quanben5.com/index.php",
+      "Method": "GET",
+      "Payload": { "c": "book", "a": "search", "keywords": "$" },
+      "ResultBookListRule": ".pic_txt_list@html",
+      "DetailUrlRule": "h3 a@href",
+      "BookNameRule": "h3 a@text",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "",
+      "NewChapterDateRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": ".pic_txt_list h3@text",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "NewChapterDateRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "",
+      "Content": {
+        "DetailUrlRule": ".tool_button a@href",
+        "CatalogueListRule": ".list li@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#content@html",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 3,
+    "SourceName": "test",
+    "BaseUrl": "https://quanben5.com/",
+    "Search": {
+      "SearchUrl": "",
+      "Method": "GET",
+      "Payload": [],
+      "ResultBookListRule": "",
+      "DetailUrlRule": "",
+      "BookNameRule": "",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "",
+      "NewChapterDateRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": ".pic_txt_list@text",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "NewChapterDateRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "",
+      "Content": {
+        "DetailUrlRule": ".tool_button a@href",
+        "CatalogueListRule": ".list li@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#content@html",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 4,
+    "SourceName": "平凡文学",
+    "BaseUrl": "http://www.pksge.com",
+    "Search": {
+      "SearchUrl": "http://www.pksge.com/modules/article/search.php",
+      "Method": "POST",
+      "Payload": ["searchkey=$", "earchtype=articlename"],
+      "ResultBookListRule": ".weizhi .tutui@html",
+      "DetailUrlRule": ".tutuiImg a@href",
+      "BookNameRule": ".tutuiTitle h2 a@text",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": ".tutuiImg a img@src",
+      "NewChapterDateRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": ".jieshaokaishi h1@text",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "NewChapterDateRule": "",
+      "IntroRule": ".jieshaokaishi h3@text",
+      "ImgURLRule": ".jieshaoTu img@src",
+      "Content": {
+        "DetailUrlRule": "",
+        "CatalogueListRule": ".zhangjiekaishi ul li@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#booktext@html",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 5,
+    "SourceName": "绿麦子",
+    "BaseUrl": "https://www.263tvb.com",
+    "Search": {
+      "SearchUrl": "https://www.263tvb.com/search/",
+      "Method": "GET",
+      "Payload": { "searchkey": "$" },
+      "ResultBookListRule": "#hotcontent .item@html",
+      "DetailUrlRule": "a.0@href",
+      "BookNameRule": "a.0@title",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": ".js@text",
+      "ImgURLRule": "",
+      "NewChapterDateRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": "#info h1@text",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "NewChapterDateRule": "",
+      "IntroRule": "#intro@text",
+      "ImgURLRule": "",
+      "Content": {
+        "DetailUrlRule": "",
+        "CatalogueListRule": "#newlist dd@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#booktxt@html",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 6,
+    "SourceName": "demo",
+    "BaseUrl": "https://quanben5.com/",
+    "Search": {
+      "SearchUrl": "https://quanben5.com/index.php",
+      "Method": "GET",
+      "Payload": { "c": "book", "a": "search", "keywords": "$" },
+      "ResultBookListRule": ".pic_txt_list@html",
+      "DetailUrlRule": "h3 a@href",
+      "BookNameRule": "h3 a@text",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": ".pic_txt_list h3@text",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "NewChapterDateRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "",
+      "Content": {
+        "DetailUrlRule": ".tool_button a@href",
+        "CatalogueListRule": ".list li@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#content@html",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 7,
+    "SourceName": "156",
+    "BaseUrl": "https://www.156n.com",
+    "Search": {
+      "SearchUrl": "https://www.156n.com/search.php",
+      "Method": "",
+      "Payload": ["keyword=$", "json=1"],
+      "ResultBookListRule": "",
+      "DetailUrlRule": "",
+      "BookNameRule": "",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": "",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "",
+      "CatalogueNameRule": "",
+      "CatalogueUrlRule": "",
+      "Content": {
+        "DetailUrlRule": "this",
+        "CatalogueListRule": ".zhangjiekaishi ul li@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#booktext@html",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 8,
+    "SourceName": "笔趣阁",
+    "BaseUrl": "https://www.biquge0.cc",
+    "Search": {
+      "SearchUrl": "https://www.biquge0.cc/modules/article/search.php",
+      "Method": "POST",
+      "Payload": ["searchkey=$"],
+      "ResultBookListRule": ".txt-list li@html",
+      "DetailUrlRule": ".s2 a.0@href",
+      "BookNameRule": ".s2 a.0@text",
+      "AuthorRule": ".s4@text",
+      "TypeRule": ".s1@text",
+      "WordsCountRule": "",
+      "NewChapterRule": ".s3@text",
+      "NewChapterDateRule": ".s5@text",
+      "IntroRule": "",
+      "ImgURLRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": "",
+      "AuthorRule": "",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": "",
+      "CatalogueNameRule": "",
+      "CatalogueUrlRule": "",
+      "Content": {
+        "DetailUrlRule": "",
+        "CatalogueListRule": ".zhangjiekaishi ul li@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#booktext@html",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 9,
+    "SourceName": "88读书网",
+    "BaseUrl": "https://m.baka5.cc",
+    "Search": {
+      "SearchUrl": "https://m.baka5.cc/search/",
+      "Method": "POST",
+      "Payload": ["searchkey=$", "searchtype=all"],
+      "ResultBookListRule": ".book_list li@html",
+      "DetailUrlRule": "a@href",
+      "BookNameRule": ".book_title@text",
+      "AuthorRule": "p.1@text",
+      "TypeRule": ".status@text",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": ".intro@text",
+      "ImgURLRule": ".book_cover@src"
+    },
+    "BookDetail": {
+      "BookNameRule": ".title@text",
+      "AuthorRule": ".mt5 a@text",
+      "TypeRule": ".bookcover p.1@text",
+      "WordsCountRule": "",
+      "NewChapterRule": ".num@text",
+      "NewChapterDateRule": ".bookcover p.3@text",
+      "IntroRule": ".con@text",
+      "ImgURLRule": ".pic img@src",
+      "Content": {
+        "DetailUrlRule": ".loading a@href",
+        "CatalogueListRule": ".cataloglist li@html",
+        "CatalogueNameRule": "span@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": ".index-container-btn.1@href",
+        "ContentRule": "",
+        "NextContentPageRule": ""
+      }
+    }
+  },
+  {
+    "Weight": 10,
+    "SourceName": "新笔趣儿",
+    "BaseUrl": "https://www.xbiquer.com",
+    "Search": {
+      "SearchUrl": "https://www.xbiquer.com/plus/search.php",
+      "Method": "GET",
+      "Payload": { "q": "$" },
+      "ResultBookListRule": ".grid #nr@html",
+      "DetailUrlRule": "a.0@href",
+      "BookNameRule": "a.0@text",
+      "AuthorRule": "a.1@text",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "IntroRule": "",
+      "ImgURLRule": ""
+    },
+    "BookDetail": {
+      "BookNameRule": "#info h1@text",
+      "AuthorRule": "#info a.0@text",
+      "TypeRule": "",
+      "WordsCountRule": "",
+      "NewChapterRule": "",
+      "NewChapterDateRule": "",
+      "IntroRule": "#intro@text",
+      "ImgURLRule": "#fmimg img@src",
+      "Content": {
+        "DetailUrlRule": "",
+        "CatalogueListRule": "#list dd@html",
+        "CatalogueNameRule": "a@text",
+        "CatalogueUrlRule": "a@href",
+        "NextCatalogePageRule": "",
+        "ContentRule": "#content@html",
+        "NextContentPageRule": "#nextChapterButton.1@href"
+      }
+    }
+  }
+]

@@ -1,52 +1,44 @@
-import { useEffect, useRef, useState } from 'react';
+import { Button } from '@material-ui/core';
+import { Upload } from 'renderer/components/Upload';
 import { useBookSourceStore } from 'renderer/store';
-import '@material-ui/icons/Close';
-
-function Upload() {
-  // 触发选择文件模拟点击事件
-  const fileRef = useRef<HTMLInputElement>(null);
-  const getFilds = () => fileRef.current?.click();
-
-  const fileinputChange = (event: any) => {
-    const fileData = event.target.files[0];
-    if (fileData) {
-      const reader = new FileReader();
-
-      reader.onload = (e) => {
-        const fileContent = e.target?.result as string;
-        console.log(fileContent); // 打印文件内容
-      };
-
-      reader.readAsText(fileData);
-    }
-  };
-
-  return (
-    <div>
-      <input
-        id="file"
-        ref={fileRef}
-        type="file"
-        accept=".json"
-        style={{ display: 'none' }}
-        onChange={(e) => fileinputChange(e)}
-      />
-      <button onClick={getFilds}>上传excel</button>
-    </div>
-  );
-}
+import styles from './index.module.scss';
+import { isBookSource } from 'renderer/utils';
 
 export default function SourceManger() {
   const sourceStore = useBookSourceStore();
 
+  const handleImport = (text: string) => {
+    try {
+      const data = JSON.parse(text);
+      if (!isBookSource(data?.[0])) {
+        console.log('no source');
+
+        return false;
+      }
+      data as BookSource[];
+      sourceStore.importSource(data);
+    } catch (e) {
+      console.log(e, 'err');
+    }
+  };
+
   return (
-    <div>
+    <div className={styles.sourceManger}>
+      <div className={styles.toolsBar}>
+        <Upload accept={['json']} callback={handleImport}>
+          <Button variant="contained" className={styles.uploadBtn}>
+            导入
+          </Button>
+        </Upload>
+        <Button variant="contained">导出</Button>
+
+        <Button variant="contained">清空</Button>
+      </div>
       {sourceStore.bookSources.map((item, key) => (
         <div key={key}>{item.SourceName}</div>
       ))}
 
-      <button onClick={() => sourceStore.export()}>按钮</button>
-      <Upload />
+      <button onClick={() => sourceStore.clearSource()}>按钮</button>
     </div>
   );
 }

@@ -1,0 +1,43 @@
+$btn-font-w: 400;
+
+.sourceManger {
+    .uploadBtn {
+        color: var(--white);
+        border-radius: 50px;
+        font-weight: $btn-font-w;
+
+        background-color: var(--color-prettylights-syntax-entity-tag);
+        &:hover {
+            background-color: var(--color-prettylights-syntax-entity-tag);
+            color: var(--white);
+        }
+    }
+
+    .toolsBar {
+        display: flex;
+
+        & > * {
+            margin: 0 10px 10px 0;
+            border-radius: 50px;
+            color: var(--white);
+            font-weight: $btn-font-w;
+            &:hover {
+                color: var(--white);
+            }
+        }
+
+        & > :nth-child(2) {
+            background-color: var(--color-prettylights-syntax-meta-diff-range);
+            &:hover {
+                background-color: var(--color-prettylights-syntax-meta-diff-range);
+            }
+        }
+
+        & > :nth-child(3) {
+            background-color: var(--color-prettylights-syntax-keyword);
+            &:hover {
+                background-color: var(--color-prettylights-syntax-keyword);
+            }
+        }
+    }
+}

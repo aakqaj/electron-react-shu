@@ -1,6 +1,7 @@
 import { downloadAs } from 'renderer/utils';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
+import { sortBy, uniqBy } from 'lodash';
 
 interface DEFAULT_CONFIG {
   bookSources: BookSource[];
@@ -8,10 +9,14 @@ interface DEFAULT_CONFIG {
 }
 
 export type SourceConfigStore = DEFAULT_CONFIG & {
+  current: () => BookSource;
+  clearSource: () => void;
   newSource: (source: BookSource) => void;
   deleteSource: (sourceName: string) => Message;
-  current: () => BookSource;
-  export: () => Message;
+  getSourceByName: (sourcename: string) => BookSource | undefined;
+  exportSource: () => Message;
+  updateSource: (source: BookSource) => Message;
+  importSource: (sources: BookSource[]) => Message;
 };
 
 const CONFIG_KEY = 'app-source';
@@ -29,12 +34,29 @@ export const useBookSourceStore = create<SourceConfigStore>()(
       clearSource() {
         set(() => ({
           bookSources: [] as BookSource[],
+          currentIndex: -1,
         }));
       },
 
+      getSourceByName(sourcename: string) {
+        return get().bookSources.find((item) => item.SourceName === sourcename);
+      },
+
+      updateSource(source: BookSource) {
+        this.newSource(source);
+        return {
+          state: true,
+          message: 'success',
+        };
+      },
+
       newSource(source: BookSource) {
+        const uniqueSortedSources = sortBy(
+          uniqBy([source].concat(get().bookSources), 'BaseUrl'),
+          'Weight'
+        );
         set((state) => ({
-          bookSources: [source].concat(state.bookSources),
+          bookSources: uniqueSortedSources,
         }));
       },
 
@@ -51,7 +73,7 @@ export const useBookSourceStore = create<SourceConfigStore>()(
         return { state: true, message: 'success' };
       },
 
-      export() {
+      exportSource() {
         downloadAs(JSON.stringify(get().bookSources), 'BookSource.json');
         return {
           state: true,
@@ -59,9 +81,23 @@ export const useBookSourceStore = create<SourceConfigStore>()(
         };
       },
 
-      import(){
+      importSource(sources: BookSource[]) {
+        console.log(sources);
 
-      }
+        const uniqueSortedSources = sortBy(
+          uniqBy(sources, 'BaseUrl'),
+          'Weight'
+        );
+
+        set((state) => ({
+          bookSources: uniqueSortedSources,
+        }));
+
+        return {
+          state: true,
+          message: 'hello',
+        };
+      },
     }),
     {
       name: CONFIG_KEY,

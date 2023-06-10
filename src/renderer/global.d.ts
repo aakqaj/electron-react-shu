@@ -1,5 +1,6 @@
 declare global {
   interface BookSource {
+    Weight: number;
     SourceName: string;
     BaseUrl: string;
     Search: {

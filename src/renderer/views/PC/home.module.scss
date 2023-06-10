@@ -4,9 +4,14 @@
   display: flex;
   color: var(--black);
   background-color: var(--c-background-primary);
-  .right{
+  .right {
     flex: 1;
     min-width: 720px;
-    padding: 48px;
+    margin: 48px;
+    border-radius: 38px;
+    padding: 38px;
+
+    // background-color: var(--c-background-secondary);
+    box-shadow: inset var(--shadow-w);
   }
 }

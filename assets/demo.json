@@ -1,0 +1,52 @@
+[
+  {
+    "Weight": 1,
+    "SourceName": "笔尖中文",
+    "BaseUrl": "https://www.biquzw.la/"
+  },
+  {
+    "Weight": 2,
+    "SourceName": "全本小说网",
+    "BaseUrl": "https://quanben5.com/"
+  },
+  {
+    "Weight": 3,
+    "SourceName": "test",
+    "BaseUrl": "https://quanben5.com/"
+  },
+  {
+    "Weight": 4,
+    "SourceName": "平凡文学",
+    "BaseUrl": "http://www.pksge.com"
+  },
+  {
+    "Weight": 5,
+    "SourceName": "绿麦子",
+    "BaseUrl": "https://www.263tvb.com"
+  },
+  {
+    "Weight": 6,
+    "SourceName": "demo",
+    "BaseUrl": "https://quanben5.com/"
+  },
+  {
+    "Weight": 7,
+    "SourceName": "156",
+    "BaseUrl": "https://www.156n.com"
+  },
+  {
+    "Weight": 8,
+    "SourceName": "笔趣阁",
+    "BaseUrl": "https://www.biquge0.cc"
+  },
+  {
+    "Weight": 9,
+    "SourceName": "88读书网",
+    "BaseUrl": "https://m.baka5.cc"
+  },
+  {
+    "Weight": 10,
+    "SourceName": "新笔趣儿",
+    "BaseUrl": "https://www.xbiquer.com"
+  }
+]

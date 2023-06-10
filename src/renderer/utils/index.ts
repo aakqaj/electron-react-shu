@@ -35,7 +35,6 @@ export function downloadAs(text: string, filename: string) {
   document.body.removeChild(element);
 }
 
-
 export function useMobileScreen() {
   const [isMobileScreen_, setIsMobileScreen] = useState(isMobileScreen());
   useEffect(() => {
@@ -153,4 +152,24 @@ export function detectEnvironment(): EnvironmentInfo {
     os,
     env,
   };
+}
+
+export function isBookSource(obj: any) {
+  return (
+    obj != null &&
+    typeof obj === 'object' &&
+    typeof obj.Weight === 'number' &&
+    typeof obj.SourceName === 'string' &&
+    typeof obj.BaseUrl === 'string' &&
+    typeof obj.Search === 'object' &&
+    typeof obj.Search.SearchUrl === 'string' &&
+    typeof obj.Search.Method === 'string' &&
+    // 继续判断 Search 对象的其他属性类型
+    // ...
+    typeof obj.BookDetail === 'object' &&
+    typeof obj.BookDetail.BookNameRule === 'string' &&
+    typeof obj.BookDetail.AuthorRule === 'string'
+    // 继续判断 BookDetail 对象的其他属性类型
+    // ...
+  );
 }
