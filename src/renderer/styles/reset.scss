@@ -1,0 +1,14 @@
+li.slick-active button {
+  width: 13px !important;
+  height: 4px !important;
+  border-radius: 2.5px !important;
+  background: hsla(213, 92%, 55%, 1) !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
