@@ -4,7 +4,7 @@ import {
   Route,
   Navigate,
 } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import styles from './App.module.scss';
 import { useAppConfig, Theme } from './store';
 import { useMobileScreen, getCSSVar } from './utils';
@@ -13,7 +13,6 @@ import { Path } from './constant';
 import Brightness2Icon from '@material-ui/icons/Brightness2';
 import Brightness7Icon from '@material-ui/icons/Brightness7';
 import Home from './views/PC/Home';
-import Settings from './views/PC/Settings';
 
 export function useSwitchTheme() {
   const config = useAppConfig();
@@ -35,10 +34,12 @@ export function useSwitchTheme() {
       'meta[name="theme-color"]:not([media])'
     );
 
-    if (config.theme === 'auto') {
-      metaDescriptionDark?.setAttribute('content', '#151515');
-      metaDescriptionLight?.setAttribute('content', '#fafafa');
-    } else {
+    // if (config.theme === 'auto') {
+    //   metaDescriptionDark?.setAttribute('content', '#151515');
+    //   metaDescriptionLight?.setAttribute('content', '#fafafa');
+    // } else
+
+    {
       const themeColor = getCSSVar('--themeColor');
       metaDescriptionDark?.setAttribute('content', themeColor);
       metaDescriptionLight?.setAttribute('content', themeColor);
@@ -46,12 +47,10 @@ export function useSwitchTheme() {
   }, [config.theme]);
 }
 
-
 function WideScreen() {
   return (
     <Routes>
-
-      <Route path={Path.Home+"/*"} element={<Home />} />
+      <Route path={Path.Home + '/*'} element={<Home />} />
       <Route path="/" element={<Navigate to={Path.Home} replace />} />
     </Routes>
   );
@@ -60,7 +59,7 @@ function WideScreen() {
 function MobileScreen() {
   return (
     <Routes>
-        <Route path={Path.Home+"/*"} element={<Home />} />
+      <Route path={Path.Home + '/*'} element={<Home />} />
       <Route path="/" element={<Navigate to={Path.Home} replace />} />
     </Routes>
   );
