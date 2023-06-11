@@ -1,8 +1,10 @@
-import { Button } from '@material-ui/core';
+import { Button ,IconButton} from '@material-ui/core';
 import { Upload } from 'renderer/components/Upload';
 import { useBookSourceStore } from 'renderer/store';
 import styles from './index.module.scss';
 import { isBookSource } from 'renderer/utils';
+
+import DownloadingIcon from '@mui/icons-material/Downloading';
 
 export default function SourceManger() {
   const sourceStore = useBookSourceStore();
@@ -15,8 +17,7 @@ export default function SourceManger() {
 
         return false;
       }
-      data as BookSource[];
-      sourceStore.importSource(data);
+      sourceStore.importSource(data as BookSource[]);
     } catch (e) {
       console.log(e, 'err');
     }
@@ -26,9 +27,9 @@ export default function SourceManger() {
     <div className={styles.sourceManger}>
       <div className={styles.toolsBar}>
         <Upload accept={['json']} callback={handleImport}>
-          <Button variant="contained" className={styles.uploadBtn}>
-            导入
-          </Button>
+          <IconButton variant="contained" className={styles.uploadBtn}>
+            <DownloadingIcon/>
+          </IconButton>
         </Upload>
         <Button variant="contained">导出</Button>
 
@@ -38,6 +39,7 @@ export default function SourceManger() {
         <div key={key}>{item.SourceName}</div>
       ))}
 
+      <DownloadingIcon/>
       <button onClick={() => sourceStore.clearSource()}>按钮</button>
     </div>
   );
